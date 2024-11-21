@@ -11,6 +11,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.praktikum6.model.Mahasiswa
+import com.example.praktikum6.ui.view.screan.MahasiswaFormView
 import com.example.praktikum6.ui.view.screan.SplashScreenView
 import com.example.praktikum6.ui.view.viewmodel.MahasiswaViewModel
 
@@ -42,6 +43,18 @@ fun MahasiswaApp(
             })
 
         }
+        composable(route = Halaman.Mahasiswa.name){
+            MahasiswaFormView(
+                onSubmitButtonClicked = {
+                    mahasiswaViewModel.saveDataMahasiswa(it)
+                    navController.navigate(Halaman.Matakuliah.name)
+                },
+                onBackButtonClicked = {
+                    navController.popBackStack()
+                }
+            )
+        }
+
 
 
     }
