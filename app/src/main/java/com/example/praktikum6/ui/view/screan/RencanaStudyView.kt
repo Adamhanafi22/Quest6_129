@@ -1,5 +1,6 @@
 package com.example.praktikum6.ui.view.screan
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -13,6 +14,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
 import androidx.compose.material3.Button
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.HorizontalDivider
@@ -59,16 +61,16 @@ fun RencanaStudyView(
     Column (
         modifier = Modifier
             .fillMaxSize()
-            .background(color = colorResource(is = R.color.primary))
+            .background(color = colorResource(id = R.color.primary))
 
-    ){
+    ) {
         Row  (
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(16.dp), verticalAlignment = Alignment.CenterVertically
         ){
-            image(
-                painter = painterResource(id = R.drawable.img),
+            Image(
+                painter = painterResource(id = R.drawable.logo),
                 contentDescription = "",
                 modifier = Modifier
                     .clip(shape = CircleShape)
@@ -76,11 +78,11 @@ fun RencanaStudyView(
 
             )
             Spacer(modifier = Modifier.padding(start = 16.dp))
-            Column (modifier = Modifier.weight(if)
+            Column (modifier = Modifier.weight(1f)
             ){
                 Text(
                     text = mahasiswa.nama,
-                    fontWeight = FontWeight.Light,
+                    fontWeight = FontWeight.Bold,
                     fontSize = 12.sp,
                     color = Color.White
                 )
@@ -187,7 +189,10 @@ fun RencanaStudyView(
                             navController.navigate(Halaman.Tampil.name)
 
                         },
-                    )
+                        enabled = checked
+                    ){
+                        Text(text = "Simpan")
+                    }
 
                 }
 
