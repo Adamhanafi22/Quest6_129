@@ -11,6 +11,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.praktikum6.model.Mahasiswa
+import com.example.praktikum6.model.RencanaStudi
 import com.example.praktikum6.ui.view.screan.MahasiswaFormView
 import com.example.praktikum6.ui.view.screan.SplashScreenView
 import com.example.praktikum6.ui.view.viewmodel.MahasiswaViewModel
@@ -25,7 +26,7 @@ enum class Halaman{
 fun MahasiswaApp(
     modifier: Modifier = Modifier,
     mahasiswaViewModel: MahasiswaViewModel = viewModel(),
-    krsViewModel: RencanaStudyViewModel = viewModel(),
+    krsViewModel: RencanaStudiViewModel = viewModel(),
     navController: NavHostController = rememberNavController()
 ){
     val mahasiswaUiState = mahasiswaViewModel.mahasiswaUiState.collectAsState().value
