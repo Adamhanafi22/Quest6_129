@@ -16,12 +16,15 @@ import com.example.praktikum6.ui.view.viewmodel.MahasiswaViewModel
 
 enum class Halaman{
     Splash,
-    Mahasiswa
+    Mahasiswa,
+    Matakuliah,
+    Tampil
 }
 @Composable
 fun MahasiswaApp(
     modifier: Modifier = Modifier,
     mahasiswaViewModel: MahasiswaViewModel = viewModel(),
+    krsViewModel: RencanaStudyViewModel = viewModel(),
     navController: NavHostController = rememberNavController()
 ){
     val mahasiswaUiState = mahasiswaViewModel.mahasiswaUiState.collectAsState().value
