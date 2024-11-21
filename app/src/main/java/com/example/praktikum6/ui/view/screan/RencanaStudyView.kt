@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.Checkbox
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -170,6 +171,16 @@ fun RencanaStudyView(
                         text = "Saya menyetujui setiap pernyataan yang ada tanpa ada paksaan dari pihak manapun.",
                         fontWeight = FontWeight.Light, fontSize = 10.sp
                     )
+                }
+                Spacer(modifier = Modifier.padding(8.dp))
+                Row  (
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceEvenly
+                ){
+                    Button(onClick = {onBackButtonClicked()}) {
+                        Text(text = "Kembali")
+                    }
+
                 }
 
             }
