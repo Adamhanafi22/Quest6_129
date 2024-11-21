@@ -15,6 +15,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
+import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -32,6 +33,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.praktikum6.R
 import com.example.praktikum6.data.MataKuliah
+import com.example.praktikum6.data.RuangKelas
 import com.example.praktikum6.model.Mahasiswa
 import com.example.praktikum6.ui.view.viewmodel.RencanaStudyViewModel
 
@@ -139,8 +141,18 @@ fun RencanaStudyView(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly
                 ){
+                    RuangKelas.kelas.forEach{data ->
+                        Row(verticalAlignment = Alignment.CenterVertically){
+                            RadioButton(
+                                selected = pilihanKelas == data,
+                                onClick = {pilihanKelas = data}
+                            )
+                            Text (data)
+                        }
+                    }
 
                 }
+
             }
         }
     }
