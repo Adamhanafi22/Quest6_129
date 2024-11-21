@@ -37,6 +37,7 @@ import com.example.praktikum6.R
 import com.example.praktikum6.data.MataKuliah
 import com.example.praktikum6.data.RuangKelas
 import com.example.praktikum6.model.Mahasiswa
+import com.example.praktikum6.navigation.Halaman
 import com.example.praktikum6.ui.view.viewmodel.RencanaStudyViewModel
 
 @Composable
@@ -180,6 +181,13 @@ fun RencanaStudyView(
                     Button(onClick = {onBackButtonClicked()}) {
                         Text(text = "Kembali")
                     }
+                    Button(
+                        onClick = {
+                            onSubmitButtonClicked(listData)
+                            navController.navigate(Halaman.Tampil.name)
+
+                        },
+                    )
 
                 }
 
