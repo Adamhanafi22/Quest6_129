@@ -3,6 +3,7 @@ package com.example.praktikum6.ui.view.screan
 import android.graphics.drawable.Icon
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -15,6 +16,7 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.SegmentedButtonDefaults.Icon
 import androidx.compose.material3.Text
@@ -108,10 +110,52 @@ fun TampilScreenView(
                     fontSize = 25.sp
                 )
                 Spacer(modifier = Modifier.padding(8.dp))
-
+                TampilData(
+                    Judul = "Nama",
+                    Isinya = mahasiswa.nama
+                )
+                TampilData(
+                    Judul = "NIM",
+                    Isinya = mahasiswa.nim
+                )
+                TampilData(
+                    Judul = "Email",
+                    Isinya = mahasiswa.email
+                )
+                TampilData(
+                    Judul = "MataKuliah",
+                    Isinya = rencanaStudi.namaMK
+                )
+                TampilData(
+                    Judul = "MataKuliah",
+                    Isinya = rencanaStudi.kelas
+                )
+                Row (
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Center
+                ){
+                    Button(
+                        onClick = {onBackButton()}
+                    ) {
+                        Text("Kembali")
+                    }
+                }
             }
 
         }
+    }
+}
+
+@Composable
+fun TampilData(
+    Judul: String,
+    Isinya: String
+){
+    Row(modifier = Modifier.fillMaxWidth().padding(16.dp),
+        horizontalArrangement = Arrangement.SpaceBetween){
+        Text(Judul,modifier = Modifier.weight(0.8f))
+        Text(" : ", modifier = Modifier.weight(0.8f))
+        Text(Isinya, modifier = Modifier.weight(2f))
     }
 }
 

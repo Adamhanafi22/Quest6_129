@@ -11,6 +11,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.Navigation
+import com.example.praktikum6.navigation.MahasiswaApp
 import com.example.praktikum6.ui.theme.Praktikum6Theme
 
 class MainActivity : ComponentActivity() {
@@ -19,29 +21,31 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             Praktikum6Theme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+                Praktikum6Theme {
+                    Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                        MahasiswaApp(
+
+                            modifier = Modifier.padding(innerPadding)
+                        )
+                    }
                 }
             }
         }
     }
-}
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+    @Composable
+    fun Greeting(name: String, modifier: Modifier = Modifier) {
+        Text(
+            text = "Hello $name!",
+            modifier = modifier
+        )
+    }
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Praktikum6Theme {
-        Greeting("Android")
+    @Preview(showBackground = true)
+    @Composable
+    fun GreetingPreview() {
+        Praktikum6Theme {
+            Greeting("Android")
+        }
     }
 }

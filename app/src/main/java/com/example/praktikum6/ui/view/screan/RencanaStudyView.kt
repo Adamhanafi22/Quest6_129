@@ -41,6 +41,7 @@ import com.example.praktikum6.data.RuangKelas
 import com.example.praktikum6.model.Mahasiswa
 import com.example.praktikum6.navigation.Halaman
 import com.example.praktikum6.ui.view.viewmodel.RencanaStudyViewModel
+import com.example.praktikum6.ui.view.widget.DynamicSelectedTextField
 
 @Composable
 fun RencanaStudyView(
@@ -93,12 +94,7 @@ fun RencanaStudyView(
                     color = Color.White
                 )
             }
-                Box {
-                    Icon(
-                        imageVector = Icons.filled.Notification,
-                        contentDescription = "",
-                        Lint = Color.White
-                    )
+
             }
         }
         Box(modifier = Modifier
@@ -124,7 +120,7 @@ fun RencanaStudyView(
                     fontWeight = FontWeight.Light
                 )
                 Spacer(modifier = Modifier.height(8.dp))
-                DynamicSelectTextField(
+                DynamicSelectedTextField(
                     selectedValue = chosenDropdown,
                     options = MataKuliah.options,
                     label = "Mata Kuliah",
@@ -185,14 +181,10 @@ fun RencanaStudyView(
                     }
                     Button(
                         onClick = {
-                            onSubmitButtonClicked(listData)
-                            navController.navigate(Halaman.Tampil.name)
-
-                        },
-                        enabled = checked
-                    ){
+                            onSubmitButtonClicked(listData) }, enabled = checked){
                         Text(text = "Simpan")
                     }
+
 
                 }
 
@@ -200,4 +192,3 @@ fun RencanaStudyView(
         }
     }
 
-}

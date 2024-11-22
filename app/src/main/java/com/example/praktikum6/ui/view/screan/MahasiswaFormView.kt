@@ -39,7 +39,7 @@ import com.example.praktikum6.R
 
 @Composable
 fun MahasiswaFormView(
-    onSubmitButtonClicked: (MutableList<String>) ->Unit,
+    onSimpantButtonClicked: (MutableList<String>) ->Unit,
     onBackButtonClicked: () -> Unit
 ){
 
@@ -155,10 +155,10 @@ fun MahasiswaFormView(
                 Row(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceEvenly) {
-                    Button(onClick = {}) {
+                    Button(onClick = {onBackButtonClicked}) {
                         Text(text= "Kembali")
                     }
-                    Button(onClick = {}) {
+                    Button(onClick = {onSimpantButtonClicked(Listdata)}) {
                         Text(text="Simpan")
                     }
                 }

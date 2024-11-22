@@ -1,6 +1,6 @@
 package com.example.praktikum6.model
 
 data class RencanaStudi(
-    val namaMk: String = "",
+    val namaMK: String = "",
     val kelas: String = ""
 )
